@@ -138,6 +138,15 @@ div {
     color: #f9f4ef;
 }
 
+.game img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 button {
     background-color: #d38c63;
     color: #f9f4ef;
@@ -164,7 +173,7 @@ footer {
     width: 100%;
     font-family: 'Aliando Rocky', sans-serif;;
 }
-
+  
 /* 
 Paleta de colores sugerida:
 - Beige cálido (#f9f4ef): Fondo general para mantener una apariencia suave y amigable.
