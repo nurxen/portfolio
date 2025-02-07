@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'KG Primary Penmanship';
+    src: url('FONTS/KGPrimaryPenmanship2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quintal Script';
+    src: url('FONTS/QuintalScript-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Aliando Rocky';
+    src: url('FONTS/AliandoRocky.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playpen Sans';
+    src: url('FONTS/PlaypenSans-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f4ef;
+    color: #5a3825;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8b5e3c;
+    color: #f9f4ef;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    font-family: 'Playpen Sans', sans-serif;
+    color: #f1e7d1;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d38c63;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #d38c63;
+}
+
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.project {
+    background-color: #f1e7d1;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+h1{
+    font-family: 'Playpen Sans', sans-serif;;
+    color: #5a3825;
+    font-size: 18px;
+}
+
+h2 {
+    font-family: 'Quintal Script', sans-serif;;
+    color: #5a3825;
+}
+
+h3 {
+    font-family: 'Playpen Sans', sans-serif;;
+    color: #5a3825;
+}
+
+a {
+    font-family: 'Playpen Sans', sans-serif;;
+    font-size: 18px;
+    color: #5a3825;
+}
+
+p {
+    font-family: 'KG Primary Penmanship', sans-serif;;
+    font-size: 22px;
+    color: #f9f4ef;
+}
+
+span {
+    font-family: 'Playpen Sans';
+    font-size: 18px;
+    color: #5a3825;
+}
+
+div {
+    font-family: 'Playpen Sans';
+    font-size: 18px;
+    color: #f9f4ef;
+}
+
+button {
+    background-color: #d38c63;
+    color: #f9f4ef;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-family: 'Playpen Sans', sans-serif;;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #5a3825;
+}
+
+footer {
+    background-color: #5a3825;
+    color: #f9f4ef;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Aliando Rocky', sans-serif;;
+}
+
+/* 
+Paleta de colores sugerida:
+- Beige cálido (#f9f4ef): Fondo general para mantener una apariencia suave y amigable.
+- Chocolate oscuro (#5a3825): Color principal del texto y botones en hover para crear contraste.
+- Terracota suave (#d38c63): Color de botones y elementos de acento para dar calidez.
+- Crema suave (#f1e7d1): Secciones claras o destacados para balance visual.
+- Tierra profunda (#8b5e3c): Encabezados y elementos importantes para definir jerarquía.
+*/
