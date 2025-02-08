@@ -16,13 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
             imgSrc: "IMAGENES/MY VIDEOGAMES/Unchained/Steam/store_capsule_vertical.png",
             description: "In the year 1997, technology is advancing, but something dark is hiding in the development of the latest innovations in Artificial Intelligence... Discover the truth behind it as you dive into the story of Unchained.",
             carouselImages: [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
             ],
             pageUrl: "" // URL de la página del juego
         },
@@ -31,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
             imgSrc: "IMAGENES/MY VIDEOGAMES/Obat/obat.png",
             description: "After an accident with the family cat, Carioca, the ragdoll, loses her button eyes. With the help of Byron, the plush dog, Carioca embarks on a journey to find her traditional button eyes by solving puzzles and using her wit. Manage your buttons wisely as you navigate Ana's room and uncover secrets on the way to the famous tailor George.",
             carouselImages: [
-                "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/0.png",
                 "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/1.png",
                 "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/2.png",
                 "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/3.png",
@@ -100,8 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             title: "Nurii on itch.io",
-            imgSrc: "IMAGENES/MY VIDEOGAMES/0.png",
-            description: "Nurii on itch.io: Explore and discover more of my games on itch.io!"
+            imgSrc: "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/0.png",
+            description: "Nurii on itch.io: Explore and discover more of my games on itch.io!",
+            carouselImages: [
+                "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/0.png"
+            ],
+            pageUrl: "https://nuriia.itch.io/the-last-nectar" // URL de la página del juego
         }
         
     ];
@@ -147,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Mostrar un texto que indique que es interactivo
                 const hoverText = document.createElement('div');
                 hoverText.classList.add('hover-indicator');
-                hoverText.textContent = "Click to see more";
+                hoverText.textContent = "Click for more details";
                 gameImageDiv.appendChild(hoverText);
         
                 carouselIndex = (0) % game.carouselImages.length;
@@ -200,6 +196,25 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Agregar el juego al contenedor principal
         gamesSection.appendChild(gameDiv);
+    });
+
+    // Crear y agregar los elementos de premios
+    awardsData.forEach(award => {
+        const awardDiv = document.createElement("div");
+        awardDiv.classList.add("award");
+
+        // Crear el título del premio
+        const awardTitle = document.createElement("h2");
+        awardTitle.innerHTML = `<strong>${award.title}</strong>`;  // Utilizando innerHTML para agregar la etiqueta <strong>
+        awardDiv.appendChild(awardTitle);
+
+        // Crear la descripción del premio
+        const awardDescription = document.createElement("p");
+        awardDescription.textContent = award.description;  // Usando textContent para agregar la descripción
+        awardDiv.appendChild(awardDescription);
+
+        // Agregar el div del premio a la sección de premios
+        awardsSection.appendChild(awardDiv);
     });
 
 
