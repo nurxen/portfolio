@@ -38,13 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
             imgSrc: "IMAGENES/MY VIDEOGAMES/Unchained/unhained.png",
             description: "In the year 1997, technology is advancing, but a hidden threat emerges within the development of new Artificial Intelligence. Dive into Jam's version of Unchained and unravel the mysteries behind the innovation.",
             carouselImages: [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
             ],
             pageUrl: "https://reibax.itch.io/unchained" // URL de la página del juego
         },
@@ -65,18 +58,15 @@ document.addEventListener('DOMContentLoaded', function () {
             imgSrc: "IMAGENES/MY VIDEOGAMES/Bomb R Us/bombsRUs.png",
             description: "A competitive game where two players battle it out in a toy factory filled with blocks and conveyor belts. Inspired by Bomberman, you’ll strategically place surprise gift bombs to eliminate your opponent. Use your wits and positioning to emerge victorious.",
             carouselImages: [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "IMAGENES/MY VIDEOGAMES/Bomb R Us/GamePlay/1JVecm.png",
+                "IMAGENES/MY VIDEOGAMES/Bomb R Us/GamePlay/pyVTPj.png",
+                "IMAGENES/MY VIDEOGAMES/Bomb R Us/GamePlay/S36rLg.png",
+                "IMAGENES/MY VIDEOGAMES/Bomb R Us/GamePlay/sssss.png",
             ],
             pageUrl: "https://nuriia.itch.io/bombs-r-us" // URL de la página del juego
         },
         {
-            title: "The last nectar",
+            title: "The Last Nectar",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Last Nectar/nectar.png",
             description: "Protect the Tree from an oncoming wave of robots. As a player, you’ll manage creatures with unique abilities to stop the robots and prevent them from reaching the Tree. Survive five waves to win or lose three lives and face defeat. Efficient creature placement is key!",
             carouselImages: [
