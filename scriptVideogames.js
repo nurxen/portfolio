@@ -202,68 +202,40 @@ document.addEventListener('DOMContentLoaded', function () {
         gamesSection.appendChild(gameDiv);
     });
 
-    // Crear y agregar los elementos de premios
     awardsData.forEach(award => {
         const awardDiv = document.createElement("div");
         awardDiv.classList.add("award");
-
+        
         // Crear el título del premio
         const awardTitle = document.createElement("h2");
-        awardTitle.innerHTML = `<strong>${award.title}</strong>`;  // Utilizando innerHTML para agregar la etiqueta <strong>
+        awardTitle.innerHTML = `<strong>${award.title}</strong>`;
         awardDiv.appendChild(awardTitle);
-
+    
         // Crear la descripción del premio
         const awardDescription = document.createElement("p");
-        awardDescription.textContent = award.description;  // Usando textContent para agregar la descripción
+        awardDescription.textContent = award.description;
         awardDiv.appendChild(awardDescription);
-
+    
+        // Agregar un pequeño icono de trofeo o medalla
+        const trophyIcon = document.createElement("img");
+        trophyIcon.src = "IMAGENES/SOCIAL MEDIA/png-clipart-computer-icons-award-symbol-badge-award-cdr-ribbon-thumbnail.png"; // Reemplaza con tu icono
+        trophyIcon.alt = "Premio";
+        trophyIcon.classList.add("trophy-icon");
+        awardDiv.appendChild(trophyIcon);
+    
+        // Efecto al pasar el ratón (hover effect)
+        awardDiv.addEventListener('mouseenter', () => {
+            awardDiv.classList.add("highlight");
+            // Mostrar animación o más detalles si es necesario
+        });
+        awardDiv.addEventListener('mouseleave', () => {
+            awardDiv.classList.remove("highlight");
+        });
+    
         // Agregar el div del premio a la sección de premios
         awardsSection.appendChild(awardDiv);
     });
-
-
-    // Add game assets section dynamically
-    const assetsSection = document.getElementById("assets");
-    const assetsData = [
-        {
-            title: "Unchained on steam",
-            imgSrc: "IMAGENES/MY VIDEOGAMES/Obat/Assets/textures_1.png",
-            description: "Environment and props design created for Once Button a Time."
-        },
-        {
-            title: "Once Button a Time",
-            imgSrc: "IMAGENES/MY VIDEOGAMES/Obat/Assets/textures_1.png",
-            description: "Environment and props design created for Unchained."
-        },
-        {
-            title: "Unchained",
-            imgSrc: "IMAGENES/MY VIDEOGAMES/Obat/Assets/textures_1.png",
-            description: "Environment and props design created for Unchained Jam."
-        }
-    ];
-
-    // Create and append asset elements
-    assetsData.forEach(asset => {
-        const assetDiv = document.createElement("div");
-        assetDiv.classList.add("game");
-
-        const assetTitle = document.createElement("h2");
-        assetTitle.innerHTML = `<strong>${asset.title}</strong>`;
-        assetDiv.appendChild(assetTitle);
-
-        const assetImg = document.createElement("img");
-        assetImg.src = asset.imgSrc;
-        assetImg.alt = asset.description;
-        assetDiv.appendChild(assetImg);
-
-        const assetDescription = document.createElement("p");
-        assetDescription.classList.add("pJustify");
-        assetDescription.textContent = asset.description;
-        assetDiv.appendChild(assetDescription);
-
-        assetsSection.appendChild(assetDiv);
-    });
-
+    
     // Social links dynamically
     const socialLinks = [
         { name: "Instagram", url: "https://www.instagram.com/nurxen_", icon: "IMAGENES/SOCIAL MEDIA/instagram.svg" },
