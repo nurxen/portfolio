@@ -55,32 +55,44 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+header h1 {
+    font-family: 'Playpen Sans', sans-serif;
+    color: #94516c; /* Lila pastel */
+    font-size: 35px;
+    position: relative;
+}
+
 header img {
     max-width: 150px;
     margin: 0 auto;
 }
 
-header .header-text {
-    font-family: 'KG Primary Penmanship', sans-serif; /* Fuente elegante para el texto */
-    color: #f0ece0; /* Blanco pastel */
+.header-text {
+    font-family: 'Playpen Sans', sans-serif;
+    color: #fefefe; /* Blanco pastel */
     font-size: 24px; /* Tamaño adecuado para un encabezado destacado */
     margin-top: 20px; /* Espacio entre la imagen y el texto */
     padding: 0 20px;
     line-height: 1.4;
 }
 
-header .header-text h1 {
+.header-text h4 {
     font-family: 'Playpen Sans', sans-serif;
     font-size: 22px; /* Tamaño más grande para el título principal */
     color: #fefefe; /* Lila pastel */
     margin-bottom: 20px;
 }
 
-header .header-text p {
+.header-text p {
     font-size: 18px; /* Tamaño del párrafo */
     color: #fefefe; /* Lila claro pastel */
     font-style: italic; /* Añadido estilo cursivo para mayor distinción */
 }
+
+nav {
+    position: sticky;
+}
+
 
 nav ul {
     list-style: none;
@@ -89,6 +101,7 @@ nav ul {
     padding: 0;
     margin: 0;
     background-color: #446b7e; /* Azul pastel */
+    
 }
 
 nav ul li {
@@ -101,6 +114,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft shadow for better contrast */
 }
 
 nav ul li a::after {
@@ -121,6 +135,7 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     color: #d0f0e8; /* Azul claro pastel */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
 }
 
 section {
@@ -146,10 +161,37 @@ section {
 h1 {
     font-family: 'Playpen Sans', sans-serif;
     color: #94516c; /* Lila pastel */
-    font-size: 22px;
+    font-size: 35px;
     position: relative;
-
 }
+
+h1::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #94516c; /* Lila pastel */
+    left: 0;
+    bottom: -8px;
+    border-radius: 10px; /* Rounded curve */
+    animation: rounded-underline 1s forwards;
+}
+
+@keyframes rounded-underline {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+nav ul li a:hover::after {
+    width: 100%;
+    transform: scaleX(1.1); /* Slightly scale the underline */
+}
+
 
 h2 {
     font-family: 'Quintal Script', sans-serif;
@@ -174,7 +216,7 @@ a {
 
 p {
     font-family: 'KG Primary Penmanship', sans-serif;
-    font-size: 25px;
+    font-size: 27px;
     color: #333333; /* Blanco pastel */
     margin-block: 2px;
 }
@@ -185,15 +227,15 @@ ul {
 
 span {
     font-family: 'KG Primary Penmanship', sans-serif;
-    font-size: 22px;
+    font-size: 25px;
     text-align: centre;
     color: #fefefe; /* Gris oscuro */
 }
 
 .pJustify {
     text-align: justify;
-    font-family: 'Playpen Sans', sans-serif;;
-    font-size: 18px;
+    font-family: 'KG Primary Penmanship', sans-serif;;
+    font-size: 27px;
     text-align: justify;
     color: #333333; /* Gris oscuro */
 }

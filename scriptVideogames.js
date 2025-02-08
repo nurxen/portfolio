@@ -1,10 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Example of adding content to the "Games" section dynamically
+    
+    // Create and add the brief description at the beginning
+    const introSection = document.createElement("section");
+    introSection.classList.add("intro-section");
+
+    const introTitle = document.createElement("h1");
+    introTitle.textContent = "Welcome to my video games";
+    introSection.appendChild(introTitle);
+
+    const introDescription = document.createElement("p");
+    introDescription.textContent = "This page contains a selection of my games, including various genres and styles. From adventure to puzzles, each project reflects my passion for game development. Explore the titles and learn more about each one by clicking the images.";
+    introSection.appendChild(introDescription);
+
+    // Add the intro section before the games section
     const gamesSection = document.getElementById("games");
+    gamesSection.parentNode.insertBefore(introSection, gamesSection);
     
     // Create and append the back button at the top (above the "Games" title)
     const backButton = document.createElement("button");
-    backButton.textContent = "Back to Home";
+    backButton.textContent = "Back to Home ->";
     backButton.onclick = () => {
         window.location.href = 'index.html'; // Replace with your homepage URL
     };
@@ -17,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "In the year 1997, technology is advancing, but something dark is hiding in the development of the latest innovations in Artificial Intelligence... Discover the truth behind it as you dive into the story of Unchained.",
             carouselImages: [
             ],
-            pageUrl: "" // URL de la página del juego
+            pageUrl: "https://store.steampowered.com/app/3234310/UNCHAINED/" // URL de la página del juego
         },
         {
             title: "Once Button a Time",
@@ -70,25 +84,25 @@ document.addEventListener('DOMContentLoaded', function () {
             imgSrc: "IMAGENES/MY VIDEOGAMES/Last Nectar/nectar.png",
             description: "Protect the Tree from an oncoming wave of robots. As a player, you’ll manage creatures with unique abilities to stop the robots and prevent them from reaching the Tree. Survive five waves to win or lose three lives and face defeat. Efficient creature placement is key!",
             carouselImages: [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
             ],
             pageUrl: "https://nuriia.itch.io/the-last-nectar" // URL de la página del juego
         },
         {
-            title: "Nurii on itch.io",
+            title: "All Games on itch.io",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/0.png",
-            description: "Nurii on itch.io: Explore and discover more of my games on itch.io!",
+            description: "Discover and explore a collection of my games on itch.io! From thrilling adventures to unique experiences, there's something for every gamer. Check them out now!",
             carouselImages: [
-                "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/0.png"
+                "IMAGENES/MY VIDEOGAMES/Unchained/Steam/store_capsule_vertical.png",
+                "IMAGENES/MY VIDEOGAMES/Obat/obat.png",
+                "IMAGENES/MY VIDEOGAMES/Unchained/unhained.png",
+                "IMAGENES/MY VIDEOGAMES/Relapsed/relapsed.png",
+                "IMAGENES/MY VIDEOGAMES/Bomb R Us/bombsRUs.png",
+                "IMAGENES/MY VIDEOGAMES/Last Nectar/nectar.png",
             ],
-            pageUrl: "https://nuriia.itch.io/the-last-nectar" // URL de la página del juego
+            pageUrl: "https://nuriia.itch.io/the-last-nectar" // Link to the game page on itch.io
         }
+        
+        
         
     ];
 
