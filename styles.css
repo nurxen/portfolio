@@ -379,3 +379,67 @@ footer {
     width: 100%;
     font-family: 'Aliando Rocky', sans-serif;
 }
+
+/* Estilo para la sección de "Featured Projects"
+#featuredProjects {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según lo que necesites 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+/* Contenedor de la imagen deslizante */
+.image-slider {
+    position: relative;
+    width: 600px;  /* Ajusta el ancho de la imagen */
+    height: 600px; /* Ajusta la altura de la imagen */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    margin: 0 auto;          /* Asegura que el contenedor esté centrado */
+}
+
+/* Contenedor de las imágenes */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para las imágenes */
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene las proporciones de la imagen */
+    border-radius: 15px; /* Bordes redondeados para un estilo más suave */
+}
+
+/* Inicializamos el clip-path para ambas imágenes */
+#imageA {
+    clip-path: inset(0 50% 0 0); /* Muestra la mitad izquierda de la primera imagen */
+}
+
+#imageB {
+    clip-path: inset(0 0 0 50%); /* Muestra la mitad derecha de la segunda imagen */
+}
+
+/* Barra deslizante */
+.slider-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    background-color: #333333;
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+
+

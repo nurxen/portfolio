@@ -1,30 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
-    // Create and add the brief description at the beginning
-    const introSection = document.createElement("section");
-    introSection.classList.add("intro-section");
+        
+        // Create and add the brief description at the beginning
+        const introSection = document.createElement("section");
+        introSection.classList.add("intro-section");
 
-    const introTitle = document.createElement("h1");
-    introTitle.textContent = "Welcome to my video games";
-    introSection.appendChild(introTitle);
+        const introTitle = document.createElement("h1");
+        introTitle.textContent = "Welcome to my video games";
+        introSection.appendChild(introTitle);
 
-    const introDescription = document.createElement("p");
-    introDescription.textContent = "This page contains a selection of my games, including various genres and styles. From adventure to puzzles, each project reflects my passion for game development. Explore the titles and learn more about each one by clicking the images.";
-    introSection.appendChild(introDescription);
+        const introDescription = document.createElement("p");
+        introDescription.textContent = "This page contains a selection of my games, including various genres and styles. From adventure to puzzles, each project reflects my passion for game development. Explore the titles and learn more about each one by clicking the images.";
+        introSection.appendChild(introDescription);
 
-    // Add the intro section before the games section
-    const gamesSection = document.getElementById("games");
-    gamesSection.parentNode.insertBefore(introSection, gamesSection);
-    
-    // Create and append the back button at the top (above the "Games" title)
-    const backButton = document.createElement("button");
-    backButton.textContent = "Back to Home ->";
-    backButton.onclick = () => {
-        window.location.href = 'index.html'; // Replace with your homepage URL
-    };
-    gamesSection.insertBefore(backButton, gamesSection.firstChild); // Insert the button at the top
+        // Add the intro section before the games section
+        const gamesSection = document.getElementById("games");
+        gamesSection.parentNode.insertBefore(introSection, gamesSection);
+        
+        // Create and append the back button at the top (above the "Games" title)
+        const backButton = document.createElement("button");
+        backButton.textContent = "Back to Home ->";
+        backButton.onclick = () => {
+            window.location.href = 'index.html'; // Replace with your homepage URL
+        };
+        gamesSection.insertBefore(backButton, gamesSection.firstChild); // Insert the button at the top
 
-    const gamesData = [
+        const gamesData = [
         {
             title: "Unchained on Steam",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Unchained/Steam/store_capsule_vertical.png",
@@ -99,168 +99,122 @@ document.addEventListener('DOMContentLoaded', function () {
                 "IMAGENES/MY VIDEOGAMES/Bomb R Us/bombsRUs.png",
                 "IMAGENES/MY VIDEOGAMES/Last Nectar/nectar.png",
             ],
-            pageUrl: "https://nuriia.itch.io/the-last-nectar" // Link to the game page on itch.io
-        }
-        
-        
-        
-    ];
-
-    const awardsSection = document.getElementById("awards");
-    const awardsData = [
-        {
-            title: "Devuego Awards Finalist",
-            description: "Nominated for Best Game Jam Game at the national Devuego Awards with Once Button a Time!"
-        },
-        {
-            title: "Game Jam Champions",
-            description: "Winner of the Game Scholars Game Jam with Unchained"
-        },
-        {
-            title: "Third Place",
-            description: "Awarded third place at the Virtual Core Game Jam with Once Button a Time!"
+            pageUrl: "https://nuriia.itch.io/" // Link to the game page on itch.io
         }
     ];
 
-    gamesData.forEach((game, index) => {
-        const gameDiv = document.createElement("div");
-        gameDiv.classList.add("game");
-        
-        if (index % 2 !== 0) {
-            gameDiv.classList.add("reverse");
-        }
-    
-        // Crear contenedor de imagen
-        const gameImageDiv = document.createElement("div");
-        gameImageDiv.classList.add("gameImageDiv");
-        const gameImg = document.createElement("img");
-        gameImg.src = game.imgSrc;
-        gameImg.alt = game.title;
-        gameImageDiv.appendChild(gameImg);
-        
-        // Crear carrusel de imágenes
-        let carouselIndex = 0;
-        let carouselInterval;
-        
-        gameImageDiv.addEventListener('mouseenter', () => {
-            if (game.carouselImages && game.carouselImages.length > 0) {
-                // Mostrar un texto que indique que es interactivo
-                const hoverText = document.createElement('div');
-                hoverText.classList.add('hover-indicator');
-                hoverText.textContent = "Click for more details";
-                gameImageDiv.appendChild(hoverText);
-        
-                carouselIndex = (0) % game.carouselImages.length;
-                gameImg.src = game.carouselImages[carouselIndex];
-        
-                // Iniciar el carrusel con el intervalo de tiempo
-                carouselInterval = setInterval(() => {
-                    gameImg.classList.add('hidden');
-        
-                    setTimeout(() => {
-                        carouselIndex = (carouselIndex + 1) % game.carouselImages.length;
-                        gameImg.src = game.carouselImages[carouselIndex];
-                        gameImg.classList.remove('hidden');
-                    }, 500);
-                }, 2000);
+        gamesData.forEach((game, index) => {
+            const gameDiv = document.createElement("div");
+            gameDiv.classList.add("game");
+            
+            if (index % 2 !== 0) {
+                gameDiv.classList.add("reverse");
             }
-        });
         
-        gameImageDiv.addEventListener('mouseleave', () => {
-            clearInterval(carouselInterval);
+            const gameImageDiv = document.createElement("div");
+            gameImageDiv.classList.add("gameImageDiv");
+            const gameImg = document.createElement("img");
             gameImg.src = game.imgSrc;
+            gameImg.alt = game.title;
+            gameImageDiv.appendChild(gameImg);
+            
+            let carouselIndex = 0;
+            let carouselInterval;
+            
+            gameImageDiv.addEventListener('mouseenter', () => {
+                if (game.carouselImages && game.carouselImages.length > 0) {
+                    const hoverText = document.createElement('div');
+                    hoverText.classList.add('hover-indicator');
+                    hoverText.textContent = "Click for more details";
+                    gameImageDiv.appendChild(hoverText);
+            
+                    carouselIndex = (0) % game.carouselImages.length;
+                    gameImg.src = game.carouselImages[carouselIndex];
+            
+                    carouselInterval = setInterval(() => {
+                        gameImg.classList.add('hidden');
+            
+                        setTimeout(() => {
+                            carouselIndex = (carouselIndex + 1) % game.carouselImages.length;
+                            gameImg.src = game.carouselImages[carouselIndex];
+                            gameImg.classList.remove('hidden');
+                        }, 500);
+                    }, 2000);
+                }
+            });
+            
+            gameImageDiv.addEventListener('mouseleave', () => {
+                clearInterval(carouselInterval);
+                gameImg.src = game.imgSrc;
+            
+                const hoverText = gameImageDiv.querySelector('.hover-indicator');
+                if (hoverText) {
+                    gameImageDiv.removeChild(hoverText);
+                }
+            });
+            
+            gameImageDiv.addEventListener('click', () => {
+                window.open(game.pageUrl, '_blank');
+            });
         
-            // Elimina el mensaje
-            const hoverText = gameImageDiv.querySelector('.hover-indicator');
-            if (hoverText) {
-                gameImageDiv.removeChild(hoverText);
+            const gameTextDiv = document.createElement("div");
+            gameTextDiv.classList.add("gameTextDiv");
+            const gameTitle = document.createElement("h2");
+            gameTitle.innerHTML = `<strong>${game.title}</strong>`;
+            gameTextDiv.appendChild(gameTitle);
+        
+            const gameDescription = document.createElement("p");
+            gameDescription.classList.add("pJustify");
+            gameDescription.textContent = game.description;
+            gameTextDiv.appendChild(gameDescription);
+        
+            gameDiv.appendChild(gameImageDiv);
+            gameDiv.appendChild(gameTextDiv);
+        
+            gamesSection.appendChild(gameDiv);
+        });
+
+        const awardsSection = document.getElementById("awards");
+        const awardsData = [
+            {
+                title: "Devuego Awards Finalist",
+                description: "Nominated for Best Game Jam Game at the national Devuego Awards with Once Button a Time!"
+            },
+            {
+                title: "Game Jam Champions",
+                description: "Winner of the Game Scholars Game Jam with Unchained"
+            },
+            {
+                title: "Third Place",
+                description: "Awarded third place at the Virtual Core Game Jam with Once Button a Time!"
             }
-        });
-        
-        // Añadir event listener para redirigir al hacer clic
-        gameImageDiv.addEventListener('click', () => {
-            window.open(game.pageUrl, '_blank'); // Abre el enlace en una nueva pestaña
-        });
-    
-        // Crear contenedor de texto
-        const gameTextDiv = document.createElement("div");
-        gameTextDiv.classList.add("gameTextDiv");
-        const gameTitle = document.createElement("h2");
-        gameTitle.innerHTML = `<strong>${game.title}</strong>`;
-        gameTextDiv.appendChild(gameTitle);
-    
-        const gameDescription = document.createElement("p");
-        gameDescription.classList.add("pJustify");
-        gameDescription.textContent = game.description;
-        gameTextDiv.appendChild(gameDescription);
-    
-        // Añadir contenedores al div principal
-        gameDiv.appendChild(gameImageDiv);
-        gameDiv.appendChild(gameTextDiv);
-    
-        // Agregar el juego al contenedor principal
-        gamesSection.appendChild(gameDiv);
-    });
+        ];
 
-    awardsData.forEach(award => {
-        const awardDiv = document.createElement("div");
-        awardDiv.classList.add("award");
+        awardsData.forEach(award => {
+            const awardDiv = document.createElement("div");
+            awardDiv.classList.add("award");
+            
+            const awardTitle = document.createElement("h2");
+            awardTitle.innerHTML = `<strong>${award.title}</strong>`;
+            awardDiv.appendChild(awardTitle);
         
-        // Crear el título del premio
-        const awardTitle = document.createElement("h2");
-        awardTitle.innerHTML = `<strong>${award.title}</strong>`;
-        awardDiv.appendChild(awardTitle);
-    
-        // Crear la descripción del premio
-        const awardDescription = document.createElement("p");
-        awardDescription.textContent = award.description;
-        awardDiv.appendChild(awardDescription);
-    
-        // Agregar un pequeño icono de trofeo o medalla
-        const trophyIcon = document.createElement("img");
-        trophyIcon.src = "IMAGENES/SOCIAL MEDIA/png-clipart-computer-icons-award-symbol-badge-award-cdr-ribbon-thumbnail.png"; // Reemplaza con tu icono
-        trophyIcon.alt = "Premio";
-        trophyIcon.classList.add("trophy-icon");
-        awardDiv.appendChild(trophyIcon);
-    
-        // Efecto al pasar el ratón (hover effect)
-        awardDiv.addEventListener('mouseenter', () => {
-            awardDiv.classList.add("highlight");
-            // Mostrar animación o más detalles si es necesario
+            const awardDescription = document.createElement("p");
+            awardDescription.textContent = award.description;
+            awardDiv.appendChild(awardDescription);
+        
+            const trophyIcon = document.createElement("img");
+            trophyIcon.src = "IMAGENES/SOCIAL MEDIA/png-clipart-computer-icons-award-symbol-badge-award-cdr-ribbon-thumbnail.png";
+            trophyIcon.alt = "Premio";
+            trophyIcon.classList.add("trophy-icon");
+            awardDiv.appendChild(trophyIcon);
+        
+            awardDiv.addEventListener('mouseenter', () => {
+                awardDiv.classList.add("highlight");
+            });
+            awardDiv.addEventListener('mouseleave', () => {
+                awardDiv.classList.remove("highlight");
+            });
+        
+            awardsSection.appendChild(awardDiv);
         });
-        awardDiv.addEventListener('mouseleave', () => {
-            awardDiv.classList.remove("highlight");
-        });
-    
-        // Agregar el div del premio a la sección de premios
-        awardsSection.appendChild(awardDiv);
     });
-    
-    // Social links dynamically
-    const socialLinks = [
-        { name: "Instagram", url: "https://www.instagram.com/nurxen_", icon: "IMAGENES/SOCIAL MEDIA/instagram.svg" },
-        { name: "Pinterest", url: "https://www.pinterest.com/nurxen_", icon: "IMAGENES/SOCIAL MEDIA/pinterest.svg" },
-        { name: "X", url: "https://www.x.com/nurxen_", icon: "IMAGENES/SOCIAL MEDIA/x.svg" },
-        { name: "Tiktok", url: "https://www.tiktok.com/@nurxen_", icon: "IMAGENES/SOCIAL MEDIA/tiktok.svg" },
-        { name: "Linkedin", url: "https://www.linkedin.com/in/nuria-serrano-martín-0b78932b9/", icon: "IMAGENES/SOCIAL MEDIA/linkedin.svg" },
-        { name: "Youtube", url: "https://www.x.com/nurxen_", icon: "IMAGENES/SOCIAL MEDIA/youtube.svg" },
-        { name: "Correo", url: "mailto:nurxen21@correo.com", icon: "IMAGENES/SOCIAL MEDIA/x.svg" },
-        { name: "Devuego", url: "https://www.devuego.es/bd/fdesarrollador/nuria-serrano-martin-nurxen", icon: "IMAGENES/SOCIAL MEDIA/devuego.svg" },
-        // Add more social media links as needed
-    ];
-
-    const socialLinksContainer = document.querySelector(".social-links");
-    socialLinks.forEach(link => {
-        const anchor = document.createElement("a");
-        anchor.href = link.url;
-        anchor.target = "_blank";
-        
-        const img = document.createElement("img");
-        img.src = link.icon;
-        img.alt = link.name;
-        img.width = 40;
-        anchor.appendChild(img);
-        
-        socialLinksContainer.appendChild(anchor);
-    });
-});
