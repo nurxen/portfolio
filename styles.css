@@ -227,12 +227,11 @@ div {
 }
 
 .game img {
-    width: 315px;
-    height: 250px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 22px;
+    border-radius: 22px; /* Borde redondeado */
 }
-
 
 .gameTextDiv {
     display: flex;
@@ -255,10 +254,10 @@ div {
 
 .hover-indicator {
     position: absolute;
-    top: 10%;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(68, 107, 126, 0.7);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;

@@ -16,10 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
             imgSrc: "IMAGENES/MY VIDEOGAMES/Unchained/Steam/store_capsule_vertical.png",
             description: "In the year 1997, technology is advancing, but something dark is hiding in the development of the latest innovations in Artificial Intelligence... Discover the truth behind it as you dive into the story of Unchained.",
             carouselImages: [
-                "IMAGENES/MY VIDEOGAMES/Obat/obat.png",
-                "IMAGENES/MY VIDEOGAMES/Unchained/unhained.png",
-                "IMAGENES/MY VIDEOGAMES/Bomb R Us/bombsRUs.png"
-            ]
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            pageUrl: "" // URL de la página del juego
         },
         {
             title: "Once Button a Time",
@@ -33,27 +38,65 @@ document.addEventListener('DOMContentLoaded', function () {
                 "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/4.png",
                 "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/5.png",
                 "IMAGENES/MY VIDEOGAMES/Obat/Gameplay/Captura de pantalla 2024-11-04 221032.png"
-            ]
+            ],
+            pageUrl: "https://origamingcreations.itch.io/once-button-a-time" // URL de la página del juego
         },
         {
             title: "Unchained",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Unchained/unhained.png",
-            description: "In the year 1997, technology is advancing, but a hidden threat emerges within the development of new Artificial Intelligence. Dive into Jam's version of Unchained and unravel the mysteries behind the innovation."
+            description: "In the year 1997, technology is advancing, but a hidden threat emerges within the development of new Artificial Intelligence. Dive into Jam's version of Unchained and unravel the mysteries behind the innovation.",
+            carouselImages: [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            pageUrl: "https://reibax.itch.io/unchained" // URL de la página del juego
         },
         {
             title: "Relapsed",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Relapsed/relapsed.png",
-            description: "Play as Alejandro Morales, a man struggling with depression who finds himself working at a psychological assistance office. Your decisions will shape the outcome as you help fragile patients navigate their challenges. The fate of their lives is in your hands."
+            description: "Play as Alejandro Morales, a man struggling with depression who finds himself working at a psychological assistance office. Your decisions will shape the outcome as you help fragile patients navigate their challenges. The fate of their lives is in your hands.",
+            carouselImages: [
+                "IMAGENES/MY VIDEOGAMES/Relapsed/gameplay/_TyhMp.png",
+                "IMAGENES/MY VIDEOGAMES/Relapsed/gameplay/dIBa+s.png",
+                "IMAGENES/MY VIDEOGAMES/Relapsed/gameplay/_TyhMp2.png",
+                "IMAGENES/MY VIDEOGAMES/Relapsed/gameplay/s8riU8.png"
+            ],
+            pageUrl: "https://tokpary.itch.io/relapsed" // URL de la página del juego
         },
         {
             title: "Bombs R Us",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Bomb R Us/bombsRUs.png",
-            description: "A competitive game where two players battle it out in a toy factory filled with blocks and conveyor belts. Inspired by Bomberman, you’ll strategically place surprise gift bombs to eliminate your opponent. Use your wits and positioning to emerge victorious."
+            description: "A competitive game where two players battle it out in a toy factory filled with blocks and conveyor belts. Inspired by Bomberman, you’ll strategically place surprise gift bombs to eliminate your opponent. Use your wits and positioning to emerge victorious.",
+            carouselImages: [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            pageUrl: "https://nuriia.itch.io/bombs-r-us" // URL de la página del juego
         },
         {
             title: "The last nectar",
             imgSrc: "IMAGENES/MY VIDEOGAMES/Last Nectar/nectar.png",
-            description: "Protect the Tree from an oncoming wave of robots. As a player, you’ll manage creatures with unique abilities to stop the robots and prevent them from reaching the Tree. Survive five waves to win or lose three lives and face defeat. Efficient creature placement is key!"
+            description: "Protect the Tree from an oncoming wave of robots. As a player, you’ll manage creatures with unique abilities to stop the robots and prevent them from reaching the Tree. Survive five waves to win or lose three lives and face defeat. Efficient creature placement is key!",
+            carouselImages: [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            pageUrl: "https://nuriia.itch.io/the-last-nectar" // URL de la página del juego
         },
         {
             title: "Nurii on itch.io",
@@ -107,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 hoverText.textContent = "Click to see more";
                 gameImageDiv.appendChild(hoverText);
         
-                carouselIndex = (1) % game.carouselImages.length;
+                carouselIndex = (0) % game.carouselImages.length;
                 gameImg.src = game.carouselImages[carouselIndex];
         
                 // Iniciar el carrusel con el intervalo de tiempo
@@ -134,13 +177,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         
-        
-        gameImageDiv.addEventListener('mouseleave', () => {
-            clearInterval(carouselInterval);
-            gameImg.src = game.imgSrc;
-            gameImg.classList.remove('hidden'); // Asegúrate de restaurar la visibilidad
+        // Añadir event listener para redirigir al hacer clic
+        gameImageDiv.addEventListener('click', () => {
+            window.open(game.pageUrl, '_blank'); // Abre el enlace en una nueva pestaña
         });
-        
     
         // Crear contenedor de texto
         const gameTextDiv = document.createElement("div");
@@ -160,22 +200,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Agregar el juego al contenedor principal
         gamesSection.appendChild(gameDiv);
-    });
-    
-    // Create and append award elements
-    awardsData.forEach(award => {
-        const awardDiv = document.createElement("div");
-        awardDiv.classList.add("award");
-
-        const awardTitle = document.createElement("h2");
-        awardTitle.innerHTML = `<strong>${award.title}</strong>`;
-        awardDiv.appendChild(awardTitle);
-
-        const awardDescription = document.createElement("p");
-        awardDescription.textContent = award.description;
-        awardDiv.appendChild(awardDescription);
-
-        awardsSection.appendChild(awardDiv);
     });
 
 
