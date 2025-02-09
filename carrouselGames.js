@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         introSection.appendChild(introDescription);
 
         // Add the intro section before the games section
-        const gamesSection = document.getElementById("games");
+        const gamesSection = document.getElementById("carrouselGames");
         gamesSection.parentNode.insertBefore(introSection, gamesSection);
         
         // Create and append the back button at the top (above the "Games" title)

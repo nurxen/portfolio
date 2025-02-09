@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sliderBar = document.getElementById('sliderBar');
-    const imageA = document.getElementById('imageA');
-    const imageB = document.getElementById('imageB');
+    const imageA = document.getElementById('imageASliderVertical');
+    const imageB = document.getElementById('imageBSliderVertical');
     const sliderContainer = document.querySelector('.slider-container');
 
     let isDragging = false;
@@ -36,3 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.userSelect = 'auto';  // Restaurar selección de texto
     });
 });
+
+/* <!-- Contenedor para la barra deslizante -->
+<div class="image-slider">
+    <div class="slider-container">
+        <img src="IMAGENES/ARTWORK/Christmas/0750clay.png" alt="Project Image A" class="imageSliderVertical" id="imageASliderVertical">
+        <img src="IMAGENES/ARTWORK/Christmas/0750.png" alt="Project Image B" class="imageSliderVertical" id="imageBSliderVertical">
+        <div class="slider-bar" id="sliderBar"></div>
+    </div>
+</div> */
